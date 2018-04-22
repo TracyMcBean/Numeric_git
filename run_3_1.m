@@ -1,5 +1,5 @@
 % Übung 1, Aufgabe 3b, Numerik 1 
-% Theresa Kiszler
+% T---- K----
 % Abgabe am 23.04.2018
 
 function fixpunkt = run_3_1()
