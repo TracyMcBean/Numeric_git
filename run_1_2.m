@@ -1,5 +1,5 @@
 % Uebung 2 Aufgabe 1, Numerik 1 SS18
-% Theresa Kiszler, David
+% -------------
 % Abgabe: 30.04
 
 % Function to run the iteration with x_0 and y_0
