@@ -33,7 +33,7 @@ function result = givens_rotation(m, n)
     x = zeros(m, 1);
     b = zeros(m, 1);
     xcooef = zeros(m,1);  % fuer matrix A gebraucht
-    A = zeros(m,n);
+    A = zeros(m,n+1);
     x(m)= 2*pi;
     xcooef(:) = 1;
     
@@ -50,18 +50,50 @@ function result = givens_rotation(m, n)
     end 
     
     % Matrix A auffuellen mit t
-    for i = 1:n
+    for i = 1:(n+1)
         A(:, i) = xcooef;
         xcooef = xcooef.* x;
     end 
     
     % Erstelle 3D-Matrix mit Einheitsmatrix
-    Q_single = eye(n)
-    for k = 1:n
-        Q(:,:,k) = Q_single
+    Q_single = eye(m);
+    % TO DO number of Qs
+    for k = 1:(m*n)
+        Q(:,:,k) = Q_single;
     end 
     
-    % Berechne die
+    % Berechne die Transformationsmatrix
+    count = 1;
+    for i = 1:(n+1)
+        a = A(:,i);
+        l = 1;
+        k = 1;
+        while (l< m)
+            a_l = a(l);
+            a_k = a(l+1);
+            r = sqrt(a_l^2 + a_k^2);
+            s = a_k / r;
+            c = a_l / r;        
+            
+            Q(l,k,count) = -s;
+            Q(l,l,count) = c;
+            Q(k,l,count) = s;
+            Q(k,k,count) = c;
+            
+            count = count +1;
+            l = l + 1;
+        end   
+    end
+  
+    Qnew = Q(:,:,1);
+    for i = 2:(count-1)
+        Qnew = Qnew * Q(:,:,i);
+    end
+    QT = transpose(Qnew);
     
-    result = x;
+    bEnde = QT * b;
+    b_1 = bEnde(1:n+1);
+    
+    result = b_1;
+    
 end %function
