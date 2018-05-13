@@ -1,0 +1,35 @@
+Testlaeufe fuer Uebung 4 Aufgabe 1
+
+>> run_1_4
+Test 1, Gitter mit m =3 und Polynom Grad n = 1:
+Berechnetes x:
+   0.00000
+   0.72362
+Ergebnis fuer u:
+   0.00000
+   1.51554
+   4.54663
+----------------------------------------------
+Test 2, Gitter mit m = 10 und Polynom Grad n = 3:
+Berechnetes x:
+   1.2212e-15
+   1.3155e+00
+  -6.4852e-01
+   6.9626e-02
+Ergebnis fuer u:
+   1.2212e-15
+   5.8779e-01
+   7.6714e-01
+   6.4169e-01
+   3.1507e-01
+  -1.0912e-01
+  -5.2723e-01
+  -8.3565e-01
+  -9.3076e-01
+  -6.6521e-02
+----------------------------------------------
+Test 3, Gitter mit m = 4 und Polynom Grad n = 4:
+error: givens_rotation: A(I): index out of bounds; value 5 out of bound 4
+error: called from
+    run_1_4>givens_rotation at line 109 column 9
+    run_1_4 at line 21 column 12
