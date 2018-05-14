@@ -3,7 +3,7 @@
 % Aufgabe 1
 
 function result = run_1_4()
-    %RUN_1_4() loest lineares Ausgleichsproblem fuer verschieden Gitter
+    %RUN_4_1() loest lineares Ausgleichsproblem fuer verschieden Gitter
     
     disp('Test 1, Gitter mit m =3 und Polynom Grad n = 1:')
     result = givens_rotation(3,1);
