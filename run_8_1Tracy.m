@@ -1,4 +1,6 @@
+# Numerik 1, SS18
 # Uebung 8 Aufgabe 1
+# David und Tracy
 
 function [] = run_8_1()
   
