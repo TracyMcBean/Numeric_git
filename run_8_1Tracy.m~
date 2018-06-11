@@ -35,7 +35,7 @@ function [] = run_8_1()
   end
   
   error_trapez_exp = abs(y_trapez_exp(:) - (exp(2) - exp(-2)) );
-  error_trapez_sqrt = abs(y_trapez_sqrt(:) - (2/3*(2)**3/2 - 2/3*(-2)**3/2) ); 
+  error_trapez_sqrt = abs(y_trapez_sqrt(:) - (2/3*(2)^3/2 - 2/3*(-2)^3/2) ); 
    
   a = -9; b = 9;
   i = 1;
@@ -48,7 +48,7 @@ function [] = run_8_1()
   end
   
   error_simpson_exp = abs(y_simpson_exp(:) - (exp(9) - exp(-9)) );
-  error_simpson_sqrt = abs(y_simpson_sqrt(:) - (2/3*(9)**3/2 - 2/3*(-9)**3/2) ); 
+  error_simpson_sqrt = abs(y_simpson_sqrt(:) - (2/3*(9)^3/2 - 2/3*(-9)^3/2) ); 
 
   % Plot fuer Fehlerdarstellung
   figure
@@ -114,7 +114,7 @@ function y = testfunction1(x)
 end
 
 function y = testfunction2(x)
-  y = x**2;
+  y = x^2;
 end
 
 

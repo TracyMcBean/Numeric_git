@@ -4,21 +4,21 @@
 
 function [] = run_8_1()
   
-  printf('Aufgabe 1a:\n')
+  disp('Aufgabe 1a:\n')
   % Trapezregel
   % (Test 1 fuer f(x)=x da Exaktheit fuer grad = 1 gilt)
   a = 0; 
   b = 1;
   n = 20;
-  printf('Test mit y = x fuer Trapezregel \n')
+  disp('Test mit y = x fuer Trapezregel \n')
   y_trapez1 = trapez(@testfunction1, a, b, n)
-  printf('Test mit y = x^2 fuer Trapezregel \n')
+  disp('Test mit y = x^2 fuer Trapezregel \n')
   y_trapez2 = trapez(@testfunction2, a, b, n)
   
   % Simpsonregel
-  printf('Test mit y = x fuer Simpsonregel \n')
+  disp('Test mit y = x fuer Simpsonregel \n')
   y_simpson1 = simpson(@testfunction1, a, b, n)
-  printf('Test mit y = x^2 fuer Simpsonregel \n')
+  disp('Test mit y = x^2 fuer Simpsonregel \n')
   y_simpson2 = simpson(@testfunction2, a, b, n)
   
   % Aufgabe 1b
@@ -35,7 +35,7 @@ function [] = run_8_1()
   end
   
   error_trapez_exp = abs(y_trapez_exp(:) - (exp(2) - exp(-2)) );
-  error_trapez_sqrt = abs(y_trapez_sqrt(:) - (2/3*(2)**3/2 - 2/3*(-2)**3/2) ); 
+  error_trapez_sqrt = abs(y_trapez_sqrt(:) - (2/3*(2)^3/2 - 2/3*(-2)^3/2) ); 
    
   a = -9; b = 9;
   i = 1;
@@ -48,7 +48,7 @@ function [] = run_8_1()
   end
   
   error_simpson_exp = abs(y_simpson_exp(:) - (exp(9) - exp(-9)) );
-  error_simpson_sqrt = abs(y_simpson_sqrt(:) - (2/3*(9)**3/2 - 2/3*(-9)**3/2) ); 
+  error_simpson_sqrt = abs(y_simpson_sqrt(:) - (2/3*(9)^3/2 - 2/3*(-9)^3/2) ); 
 
   % Plot fuer Fehlerdarstellung
   figure
@@ -70,9 +70,9 @@ function y = trapez(fun, a, b, n)
 % b  : Endwert des Integrals
 % n  : Anzahl der Teilintervalle
   if a > b
-    printf('Warnung: Anfangswert muss kleiner als Endwert sein!')  
+    disp('Warnung: Anfangswert muss kleiner als Endwert sein!')  
   elseif n < 1 
-    printf('Warnung: n muss groeßer als 0 sein!')
+    disp('Warnung: n muss groeßer als 0 sein!')
   end
   
   % Teilintervalle definieren
@@ -92,9 +92,9 @@ function y = simpson(fun,a,b,n)
 % b  : Endwert des Integrals
 % n  : Anzahl der Teilintervalle
   if a > b
-    printf('Warnung: Anfangswert muss kleiner als Endwert sein!')  
+    disp('Warnung: Anfangswert muss kleiner als Endwert sein!')  
   elseif n < 1 
-    printf('Warnung: n muss groeßer als 0 sein!')
+    disp('Warnung: n muss groeßer als 0 sein!')
   end
   
   % Teilintervalle definieren
@@ -114,7 +114,7 @@ function y = testfunction1(x)
 end
 
 function y = testfunction2(x)
-  y = x**2;
+  y = x^2;
 end
 
 
